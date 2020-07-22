@@ -1,0 +1,45 @@
+.inbox {
+    border: 3px solid black;
+    border-radius: 10px 10px 0 0;
+    padding: 50px
+}
+.message_form__input{
+    height: 50px;
+    width: 100%;
+    border: 3px solid black;
+    border-top: none;
+    outline: none;
+}
+.message_form{
+    position: relative;
+}
+.message_form__button{
+    height: 50px;
+    width: 200px;
+    border: 3px solid black;
+    border-top: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.incoming__message{
+
+}
+.message__info{
+    display: flex;
+    justify-content: space-between;
+}
+.sent__message p{
+    white-space: pre-wrap;
+}
+.message__author{
+    color: blue;
+    font-weight: 700;
+    font-size: 20px;
+}
+.incoming__message{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.outgoing__message{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
