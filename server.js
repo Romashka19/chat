@@ -4,12 +4,16 @@ const mongoose = require('mongoose');
 const router = express.Router();
 const Router = require('./routes/messageRoutes.js');
 
+
+
 const PORT = 3000;
 const app = express();
-const server = app.listen(PORT, function () {
-    console.log(`Listening on port ${PORT}`);
-    console.log(`http://localhost:${PORT}`);
+
+app.set("view engine","hbs");
+app.get("/", function (req,res) {
+    res.render("tpl_chat.hbs")
 });
+
 
 
 mongoose.connect('mongodb://localhost:27017/chat_db');
@@ -22,8 +26,12 @@ db.once('open', function() {
 
 app.use(Router);
 
-
 app.use(express.static("public"));
+const server = app.listen(PORT, function () {
+    console.log(`Listening on port ${PORT}`);
+    console.log(`http://localhost:${PORT}`);
+});
+;
 const io = socket(server);
 const activeUsers = new Set();
 
