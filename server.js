@@ -11,7 +11,7 @@ const app = express();
 
 app.set("view engine","hbs");
 app.get("/", function (req,res) {
-    res.render("tpl_chat.hbs")
+    res.render("layout/tpl_chat.hbs")
 });
 
 
